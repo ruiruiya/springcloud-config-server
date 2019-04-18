@@ -11,7 +11,7 @@ spring:
   cloud:
     gateway:
       # 配置gateway的路由功能
-      rout
+      routes:
         # 路由feign
         - id: consumer-feign
           uri: lb://COMSUMER-FEIGN
