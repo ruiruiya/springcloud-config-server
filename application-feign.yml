@@ -1,0 +1,32 @@
+server:
+  port: 30080
+spring:
+  application:
+    name: comsumer-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.aa.com:10000/eureka,http://www.bb.com:10001/eureka,http://www.cc.com:10002/eureka
+    register-with-eureka: true
+# feign集成hystrix默认关闭了hystrix,需要手动打开
+feign: 
+  hystrix:
+    enabled: true
+#hystrix相关配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+               #配置当前的隔离模式 THREAD-线程池隔离(默认)  SEMAPHORE- 信号量隔离
+          strategy: THREAD
+        timeout:
+                   #无调用超时
+          enabled: true
+      circuitBreaker:
+              #默认是否开启熔断器
+        enabled: true
+              #熔断器打开前,失败的次数
+        requestVolumeThreshold: 2
+              #熔断器打开的持续时间,到时间后,会自动的回到半开状态
+        sleepWindowInmilliseconds: 50000
