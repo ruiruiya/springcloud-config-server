@@ -30,3 +30,5 @@ hystrix:
         requestVolumeThreshold: 2
               #熔断器打开的持续时间,到时间后,会自动的回到半开状态
         sleepWindowInmilliseconds: 50000
+com:
+  name: xiaoming
