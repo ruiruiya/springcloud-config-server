@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://www.aa.com:10000/eureka,http://www.bb.com:10001/eureka,http://www.cc.com:10002/eureka
+      defaultZone: http://localhost:10000/eureka,http://localhost:10001/eureka,http://localhost:10002/eureka
     register-with-eureka: true
 # feign集成hystrix默认关闭了hystrix,需要手动打开
 feign: 
